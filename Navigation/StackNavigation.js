@@ -1,7 +1,7 @@
 // StackScreens.js
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Onboarding1 from '../screens/StartScreens/OnBoard/Onboarding1';
 import Onboarding2 from '../screens/StartScreens/OnBoard/Onboarding2';
 import Onboarding3 from '../screens/StartScreens/OnBoard/OnBoarding3';
@@ -12,7 +12,19 @@ import Login from '../screens/StartScreens/Login/Login';
 import PersonalD1 from '../screens/StartScreens/PersonalDetails/PersonalD1';
 import PersonalD2 from '../screens/StartScreens/PersonalDetails/PersonalD2';
 
-const Stack = createStackNavigator();
+// export type RootStackParamList = {
+//   WelcomeScreen: undefined;
+//   Dashboard: undefined;
+//   DashboardTwo: undefined;
+//   LoginScreen: undefined;
+//   SignUpScreen: undefined;
+//   OtpVerificationScreen: undefined;
+//   NotificationScreen: undefined;
+//   MyCourses:undefined;
+// };
+
+// const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator();
 
 const StackScreens = () => {
   return (

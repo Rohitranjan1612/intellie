@@ -1,9 +1,9 @@
 // InboxStack.js
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LibraryScreen from '../screens/AppScreens/Library';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const LibraryStack = () => {
   return (
