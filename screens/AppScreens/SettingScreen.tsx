@@ -22,7 +22,7 @@ const SettingScreen = () => {
           // onPress={() => navigation.navigate('DashboardTwo')}
           >
             <Image
-              source={require('../Assets/Left-Actionable.png')}
+              source={require('../../assets/Left-Actionable.png')}
               style={styles.logoImage}
             />
           </TouchableOpacity>
@@ -45,13 +45,13 @@ const SettingScreen = () => {
             style={styles.listContainer}>
             <View style={styles.listSubContainer}>
               <Image
-                source={require('../Assets/Profile.png')}
+                source={require('../../assets/Profile.png')}
                 style={styles.listlogoImage}
               />
               <Text style={styles.listTextHeader}>Profile</Text>
             </View>
             <Image
-              source={require('../Assets/right-icon.png')}
+              source={require('../../assets/right-icon.png')}
               style={styles.listRightlogoImage}
             />
           </TouchableOpacity>
@@ -60,13 +60,13 @@ const SettingScreen = () => {
             style={styles.listContainer}>
             <View style={styles.listSubContainer}>
               <Image
-                source={require('../Assets/payment.png')}
+                source={require('../../assets/payment.png')}
                 style={styles.listlogoImage}
               />
               <Text style={styles.listTextHeader}>Payments</Text>
             </View>
             <Image
-              source={require('../Assets/right-icon.png')}
+              source={require('../../assets/right-icon.png')}
               style={styles.listRightlogoImage}
             />
           </TouchableOpacity>
@@ -75,13 +75,13 @@ const SettingScreen = () => {
             style={styles.listContainer}>
             <View style={styles.listSubContainer}>
               <Image
-                source={require('../Assets/Subcription.png')}
+                source={require('../../assets/Subcription.png')}
                 style={styles.listlogoImage}
               />
               <Text style={styles.listTextHeader}>Subscriptions</Text>
             </View>
             <Image
-              source={require('../Assets/right-icon.png')}
+              source={require('../../assets/right-icon.png')}
               style={styles.listRightlogoImage}
             />
           </TouchableOpacity>
@@ -91,13 +91,13 @@ const SettingScreen = () => {
             style={styles.listContainer}>
             <View style={styles.listSubContainer}>
               <Image
-                source={require('../Assets/Help.png')}
+                source={require('../../assets/Help.png')}
                 style={styles.listlogoImage}
               />
               <Text style={styles.listTextHeader}>Help & Support</Text>
             </View>
             <Image
-              source={require('../Assets/right-icon.png')}
+              source={require('../../assets/right-icon.png')}
               style={styles.listRightlogoImage}
             />
           </TouchableOpacity>
@@ -106,13 +106,13 @@ const SettingScreen = () => {
             style={styles.listContainer}>
             <View style={styles.listSubContainer}>
               <Image
-                source={require('../Assets/Contact.png')}
+                source={require('../../assets/Contact.png')}
                 style={styles.listlogoImage}
               />
               <Text style={styles.listTextHeader}>Contact us</Text>
             </View>
             <Image
-              source={require('../Assets/right-icon.png')}
+              source={require('../../assets/right-icon.png')}
               style={styles.listRightlogoImage}
             />
           </TouchableOpacity>
@@ -121,45 +121,11 @@ const SettingScreen = () => {
             style={styles.listLastContainer}>
             <View style={styles.listSubContainer}>
               <Image
-                source={require('../Assets/Logout.png')}
+                source={require('../../assets/Logout.png')}
                 style={styles.listlogoImage}
               />
               <Text style={styles.listTextHeader}>Logout</Text>
             </View>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.footerContainer}>
-          <TouchableOpacity
-          // onPress={() => navigation.navigate('DashboardTwo')}
-          >
-            <Image
-              source={require('../Assets/Profile.png')}
-              style={styles.footerlogoImage}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-          // onPress={() => navigation.navigate('DashboardTwo')}
-          >
-            <Image
-              source={require('../Assets/Profile.png')}
-              style={styles.footerlogoImage}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-          // onPress={() => navigation.navigate('DashboardTwo')}
-          >
-            <Image
-              source={require('../Assets/Profile.png')}
-              style={styles.footerlogoImage}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-          // onPress={() => navigation.navigate('DashboardTwo')}
-          >
-            <Image
-              source={require('../Assets/settings.png')}
-              style={styles.footerlogoImage1}
-            />
           </TouchableOpacity>
         </View>
       </View>
@@ -172,7 +138,6 @@ const styles = StyleSheet.create({
   container: {
     height: '100%',
     width: '100%',
-    marginTop: 15,
   },
   upgradeContainer: {
     height: 83,
@@ -191,8 +156,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   topHalf: {
-    width: 100,
-    height: 55,
+    width: '100%',
+    height: 70,
+    paddingTop: 15,
     backgroundColor: 'white',
   },
   logoImage: {
