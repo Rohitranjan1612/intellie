@@ -1,15 +1,15 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, Platform} from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-const CustomTabBar = ({state, descriptors, navigation}) => {
+const CustomTabBar = ({ state, descriptors, navigation }) => {
   return (
     <View style={styles.TabContainer}>
       {state.routes.map((route, index) => {
-        const {options} = descriptors[route.key];
+        const { options } = descriptors[route.key];
 
         const isFocused = state.index === index;
-
+        
         const iconColor = isFocused ? '#FFFFFF' : 'gray';
 
         const labelVisible = isFocused ? true : false;
@@ -44,12 +44,11 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
                 navigation.navigate(route.name);
               }
             }}
-            style={isFocused ? styles.TabActiveItem : styles.TabItem}>
-            <View style={{alignItems: 'center', flexDirection: 'row', gap: 10}}>
-              <Ionicons name={iconName} size={24} color={iconColor} />
-              {labelVisible && (
-                <Text style={{color: iconColor}}>{labelText}</Text>
-              )}
+            style={isFocused ? styles.TabActiveItem : styles.TabItem}
+          >
+            <View style={{ alignItems: 'center', flexDirection: 'row', gap: 10 }}>
+              <Icon name={iconName} size={24} color={iconColor} />
+              {labelVisible && <Text style={{ color: iconColor }}>{labelText}</Text>}
             </View>
           </TouchableOpacity>
         );
@@ -65,11 +64,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 30,
     borderRadius: 30,
-    position: 'absolute',
-    bottom: 0,
-    zindex: 99999,
-    borderWidth: 1,
-    borderColor: 'lightgray',
+    position:'absolute',
+    bottom:0,
+    zindex:99999,
+    borderWidth:1,
+    borderColor:'lightgray'
   },
   TabActiveItem: {
     paddingHorizontal: 16,
@@ -79,7 +78,7 @@ const styles = StyleSheet.create({
     ...Platform.select({
       ios: {
         shadowColor: 'black',
-        shadowOffset: {width: 0, height: 2},
+        shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
         shadowRadius: 3,
       },
@@ -90,8 +89,8 @@ const styles = StyleSheet.create({
   },
   TabItem: {
     flex: 1,
-    paddingHorizontal: 12,
-    paddingVertical: 5,
+    paddingHorizontal:12,
+    paddingVertical:5,
     alignItems: 'center',
   },
 });

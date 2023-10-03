@@ -1,18 +1,11 @@
-import React, {useRef, useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Dimensions,
-  Animated,
-  PanResponder,
-} from 'react-native';
+import React, { useRef, useState } from 'react';
+import { View, Text, StyleSheet, Dimensions, Animated, PanResponder } from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const CARD_WIDTH = SCREEN_WIDTH * 0.7;
 const CARD_HEIGHT = SCREEN_WIDTH * 0.9;
 
-const CardCarousel = ({data}) => {
+const CardCarousel = ({ data }) => {
   const panResponder = useRef(
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
@@ -22,7 +15,7 @@ const CardCarousel = ({data}) => {
       onPanResponderRelease: (event, gesture) => {
         // Implement card release logic here
       },
-    }),
+    })
   ).current;
 
   const renderCards = () => {
@@ -30,8 +23,9 @@ const CardCarousel = ({data}) => {
       return (
         <Animated.View
           key={index}
-          style={[styles.card, {zIndex: -index}]}
-          {...panResponder.panHandlers}>
+          style={[styles.card, { zIndex: -index }]}
+          {...panResponder.panHandlers}
+        >
           <Text>{item.title}</Text>
         </Animated.View>
       );
@@ -55,7 +49,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     shadowColor: 'black',
     shadowOpacity: 0.2,
-    shadowOffset: {width: 0, height: 2},
+    shadowOffset: { width: 0, height: 2 },
     shadowRadius: 2,
     elevation: 2,
     alignItems: 'center',

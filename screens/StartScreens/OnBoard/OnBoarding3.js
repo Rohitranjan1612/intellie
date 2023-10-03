@@ -1,85 +1,38 @@
 // OnboardingScreen1.js
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  StatusBar,
-} from 'react-native';
-import {Button} from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { View, Text, Image, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
+
+import Icon from 'react-native-vector-icons/Ionicons';
 
 // #2A0087
-const Onboarding3 = ({navigation}) => {
+const Onboarding3 = ({ navigation }) => {
   return (
     // Main App Screen Dimentsions
     <View style={styles.MainWrap}>
       <StatusBar barStyle="dark-content" />
 
       {/* View For Skip and Bannner */}
-      <View style={{marginTop: 60}}>
+      <View style={{ marginTop: 60 }}>
         {/* Skip Btn */}
         <TouchableOpacity
           onPress={() => navigation.navigate('MainTabNavigator')}
           style={styles.PrimaryBtnBordered}>
-          <Text style={{fontSize: 16, fontWeight: '500', color: '#2A0087'}}>
-            Skip
-          </Text>
+          <Text style={{ fontSize: 16, fontWeight: '500', color: '#2A0087' }}>Skip</Text>
         </TouchableOpacity>
         {/* View For Banner Image */}
-        <View style={{alignItems: 'center'}}>
-          <Image
-            style={{height: 400}}
-            source={require('../../../assets/Start/pose2.png')}
-          />
+        <View style={{ alignItems: 'center' }}>
+          <Image style={{height:400}} source={require('../../../assets/Start/pose2.png')} />
         </View>
         {/* View For Text */}
-        <View style={{alignItems: 'center', width: 260, alignSelf: 'center'}}>
-          <Text
-            style={{
-              fontSize: 24,
-              fontWeight: '500',
-              color: '#2A0087',
-              lineHeight: 40,
-              textAlign: 'center',
-              marginBottom: 10,
-            }}>
-            Empower Your Learning Experience
-          </Text>
-          <Text
-            style={{
-              fontSize: 16,
-              fontWeight: '400',
-              color: '#8E8E8E',
-              lineHeight: 25,
-              textAlign: 'center',
-            }}>
-            Get class updates and stay in sync with teachers
-          </Text>
+        <View style={{ alignItems: 'center', width: 260, alignSelf: 'center' }}>
+          <Text style={{ fontSize: 24, fontWeight: '500', color: '#2A0087', lineHeight: 40, textAlign: 'center', marginBottom: 10 }}>Empower Your Learning Experience</Text>
+          <Text style={{ fontSize: 16, fontWeight: '400', color: '#8E8E8E', lineHeight: 25, textAlign: 'center' }}>Get class updates and stay in sync with teachers</Text>
         </View>
 
         {/* View For Btn */}
-        <View
-          style={{alignSelf: 'center', flexDirection: 'row', marginTop: 20}}>
-          <View
-            style={{
-              width: 8,
-              height: 8,
-              borderRadius: 8,
-              backgroundColor: 'lightgrey',
-              margin: 5,
-              marginTop: 10,
-            }}></View>
-          <View
-            style={{
-              width: 8,
-              height: 20,
-              borderRadius: 8,
-              backgroundColor: '#2A0087',
-              margin: 5,
-            }}></View>
+        <View style={{ alignSelf: 'center', flexDirection: 'row', marginTop: 20 }}>
+          <View style={{ width: 8, height: 8, borderRadius: 8, backgroundColor: 'lightgrey', margin: 5, marginTop: 10  }}></View>
+          <View style={{ width: 8, height: 20, borderRadius: 8, backgroundColor: '#2A0087', margin: 5}}></View>
         </View>
 
         {/* Button */}
@@ -87,14 +40,12 @@ const Onboarding3 = ({navigation}) => {
           onPress={() => navigation.navigate('Login')}
           style={styles.PrimaryBtnRound}>
           <View style={styles.PrimaryBtnRoundInner}>
-            <Ionicons
-              name={'chevron-forward-outline'}
-              size={36}
-              color={'#FFFFFF'}
-            />
+          <Icon name={'chevron-forward-outline'} size={36} color={'#FFFFFF'} />
+
           </View>
         </TouchableOpacity>
-        <Text></Text>
+        <Text>
+        </Text>
       </View>
     </View>
   );
@@ -103,7 +54,7 @@ const Onboarding3 = ({navigation}) => {
 const styles = StyleSheet.create({
   MainWrap: {
     width: '100%',
-    height: '100%',
+    height: '100%'
   },
   background: {
     position: 'absolute',
@@ -111,7 +62,7 @@ const styles = StyleSheet.create({
     width: '100%',
     borderRadius: 48,
     padding: 50,
-    alignItems: 'center',
+    alignItems: 'center'
     // height:100
   },
   PrimaryBtnBordered: {
@@ -122,7 +73,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 8,
     borderColor: '#2A0087',
-    zIndex: 999,
+    zIndex: 999
   },
   PrimaryBtnRound: {
     width: 90,
@@ -133,18 +84,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    marginTop: 40,
+    marginTop: 40
   },
   PrimaryBtnRoundInner: {
-    backgroundColor: '#0A0087',
-    width: 75,
-    height: 75,
+    backgroundColor: '#0A0087', 
+    width: 75, 
+    height: 75, 
     borderRadius: 50,
-    borderWidth: 8,
-    borderColor: 'whitesmoke',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    borderWidth:8,
+    borderColor:'whitesmoke' ,
+    alignItems:'center',
+    justifyContent:'center'
+  }
+
 });
 
 export default Onboarding3;

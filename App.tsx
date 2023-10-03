@@ -1,5 +1,5 @@
 import React from 'react';
-import StackScreens from './Navigation/StackNavigation';
+import StackScreens from './Navigations/StackNavigation';
 
 function App(): JSX.Element {
   return <StackScreens />;

@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, { useState, useRef } from 'react';
 import {
   View,
   Text,
@@ -10,11 +10,10 @@ import {
   StatusBar,
   ScrollView,
   KeyboardAvoidingView,
-  Platform,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const OTPScreen = ({navigation}) => {
+const OTPScreen = ({ navigation }) => {
   const [otp1, setOTP1] = useState('');
   const [otp2, setOTP2] = useState('');
   const [otp3, setOTP3] = useState('');
@@ -33,7 +32,7 @@ const OTPScreen = ({navigation}) => {
     }
   };
 
-  const focusNextInput = refName => {
+  const focusNextInput = (refName) => {
     if (refName === 'otp2') {
       otpInput2Ref.current.focus();
     } else if (refName === 'otp3') {
@@ -45,23 +44,25 @@ const OTPScreen = ({navigation}) => {
 
   return (
     <KeyboardAvoidingView
-      style={{flex: 1}}
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+      style={{ flex: 1 }}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    >
       <ScrollView contentContainerStyle={styles.MainWrap}>
         <StatusBar barStyle="dark-content" />
 
-        <View style={{marginTop: 60, width: '90%', alignSelf: 'center'}}>
+        <View style={{ marginTop: 60, width: '90%', alignSelf: 'center' }}>
           <TouchableOpacity
             onPress={() => navigation.navigate('Login')}
-            style={{margin: 10}}>
+            style={{ margin: 10 }}
+          >
             <Icon name="chevron-left" size={26} color={'#2A0087'} />
           </TouchableOpacity>
 
-          <View style={{marginTop: 40, padding: 40}}>
+          <View style={{ marginTop: 40, padding: 40 }}>
             <Text style={styles.headerText}>
               Please enter verification code sent to
             </Text>
-            <Text style={{color: '#250075', fontSize: 18, fontWeight: 'bold'}}>
+            <Text style={{ color: '#250075', fontSize: 18, fontWeight: 'bold' }}>
               +91 73*** ***58
             </Text>
           </View>
@@ -72,7 +73,7 @@ const OTPScreen = ({navigation}) => {
               placeholder="0"
               maxLength={1}
               value={otp1}
-              onChangeText={text => {
+              onChangeText={(text) => {
                 setOTP1(text);
                 if (text.length === 1) {
                   focusNextInput('otp2');
@@ -86,7 +87,7 @@ const OTPScreen = ({navigation}) => {
               placeholder="0"
               maxLength={1}
               value={otp2}
-              onChangeText={text => {
+              onChangeText={(text) => {
                 setOTP2(text);
                 if (text.length === 1) {
                   focusNextInput('otp3');
@@ -100,7 +101,7 @@ const OTPScreen = ({navigation}) => {
               placeholder="0"
               maxLength={1}
               value={otp3}
-              onChangeText={text => {
+              onChangeText={(text) => {
                 setOTP3(text);
                 if (text.length === 1) {
                   focusNextInput('otp4');
@@ -114,23 +115,19 @@ const OTPScreen = ({navigation}) => {
               placeholder="0"
               maxLength={1}
               value={otp4}
-              onChangeText={text => setOTP4(text)}
+              onChangeText={(text) => setOTP4(text)}
               keyboardType="numeric"
             />
           </View>
 
-          <TouchableOpacity style={{alignItems: 'center'}}>
-            <Text style={[styles.headerText, {textAlign: 'center'}]}>
-              Resend
-            </Text>
+          <TouchableOpacity style={{ alignItems: 'center' }}>
+            <Text style={[styles.headerText, { textAlign: 'center' }]}>Resend</Text>
           </TouchableOpacity>
         </View>
 
-        <View style={{flex: 1, justifyContent: 'flex-end'}}>
-          <TouchableOpacity
-            style={styles.SecondaryBtn}
-            onPress={handleOTPSubmit}>
-            <Text style={{fontSize: 16, color: '#FFFFFF', fontWeight: 'bold'}}>
+        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+          <TouchableOpacity style={styles.SecondaryBtn} onPress={handleOTPSubmit}>
+            <Text style={{ fontSize: 16, color: '#FFFFFF', fontWeight: 'bold' }}>
               Verify
             </Text>
           </TouchableOpacity>
@@ -159,7 +156,7 @@ const styles = StyleSheet.create({
   },
   input: {
     width: 60,
-    height: 60,
+    height: 100,
     borderColor: '#2A0087',
     borderBottomWidth: 6,
     paddingHorizontal: 15,
@@ -176,7 +173,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     alignItems: 'center',
     margin: 25,
-    marginBottom: 40,
+    marginBottom: 40
   },
 });
 
