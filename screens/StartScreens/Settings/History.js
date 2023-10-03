@@ -22,7 +22,7 @@ const SettingScreen = () => {
           // onPress={() => navigation.navigate('DashboardTwo')}
           >
             <Image
-              source={require('../../assets/Left-Actionable.png')}
+              source={require('../../../assets/Left-Actionable.png')}
               style={styles.logoImage}
             />
           </TouchableOpacity>
@@ -45,13 +45,13 @@ const SettingScreen = () => {
             style={styles.listContainer}>
             <View style={styles.listSubContainer}>
               <Image
-                source={require('../../assets/Profile.png')}
+                source={require('../../../assets/Profile.png')}
                 style={styles.listlogoImage}
               />
               <Text style={styles.listTextHeader}>Profile</Text>
             </View>
             <Image
-              source={require('../../assets/right-icon.png')}
+              source={require('../../../assets/right-icon.png')}
               style={styles.listRightlogoImage}
             />
           </TouchableOpacity>
@@ -60,13 +60,13 @@ const SettingScreen = () => {
             style={styles.listContainer}>
             <View style={styles.listSubContainer}>
               <Image
-                source={require('../../assets/payment.png')}
+                source={require('../../../assets/payment.png')}
                 style={styles.listlogoImage}
               />
               <Text style={styles.listTextHeader}>Payments</Text>
             </View>
             <Image
-              source={require('../../assets/right-icon.png')}
+              source={require('../../../assets/right-icon.png')}
               style={styles.listRightlogoImage}
             />
           </TouchableOpacity>
@@ -75,13 +75,13 @@ const SettingScreen = () => {
             style={styles.listContainer}>
             <View style={styles.listSubContainer}>
               <Image
-                source={require('../../assets/Subcription.png')}
+                source={require('../../../assets/Subcription.png')}
                 style={styles.listlogoImage}
               />
               <Text style={styles.listTextHeader}>Subscriptions</Text>
             </View>
             <Image
-              source={require('../../assets/right-icon.png')}
+              source={require('../../../assets/right-icon.png')}
               style={styles.listRightlogoImage}
             />
           </TouchableOpacity>
@@ -91,13 +91,13 @@ const SettingScreen = () => {
             style={styles.listContainer}>
             <View style={styles.listSubContainer}>
               <Image
-                source={require('../../assets/Help.png')}
+                source={require('../../../assets/Help.png')}
                 style={styles.listlogoImage}
               />
               <Text style={styles.listTextHeader}>Help & Support</Text>
             </View>
             <Image
-              source={require('../../assets/right-icon.png')}
+              source={require('../../../assets/right-icon.png')}
               style={styles.listRightlogoImage}
             />
           </TouchableOpacity>
@@ -106,13 +106,13 @@ const SettingScreen = () => {
             style={styles.listContainer}>
             <View style={styles.listSubContainer}>
               <Image
-                source={require('../../assets/Contact.png')}
+                source={require('../../../assets/Contact.png')}
                 style={styles.listlogoImage}
               />
               <Text style={styles.listTextHeader}>Contact us</Text>
             </View>
             <Image
-              source={require('../../assets/right-icon.png')}
+              source={require('../../../assets/right-icon.png')}
               style={styles.listRightlogoImage}
             />
           </TouchableOpacity>
@@ -121,7 +121,7 @@ const SettingScreen = () => {
             style={styles.listLastContainer}>
             <View style={styles.listSubContainer}>
               <Image
-                source={require('../../assets/Logout.png')}
+                source={require('../../../assets/Logout.png')}
                 style={styles.listlogoImage}
               />
               <Text style={styles.listTextHeader}>Logout</Text>

@@ -11,6 +11,8 @@ import MainTabNavigator from './MainTabNavigator';
 import Login from '../screens/StartScreens/Login/Login';
 import PersonalD1 from '../screens/StartScreens/PersonalDetails/PersonalD1';
 import PersonalD2 from '../screens/StartScreens/PersonalDetails/PersonalD2';
+import History from '../screens/StartScreens/Settings/History';
+import Payments from '../screens/StartScreens/Settings/Payments';
 
 // export type RootStackParamList = {
 //   WelcomeScreen: undefined;
@@ -39,6 +41,8 @@ const StackScreens = () => {
         <Stack.Screen name="Otp" component={OTPScreen} />
         <Stack.Screen name="PersonalD1" component={PersonalD1} />
         <Stack.Screen name="PersonalD2" component={PersonalD2} />
+        <Stack.Screen name="History" component={History} />
+        <Stack.Screen name="Payments" component={Payments} />
         <Stack.Screen
           name="MainTabNavigator"
           component={MainTabNavigator}
