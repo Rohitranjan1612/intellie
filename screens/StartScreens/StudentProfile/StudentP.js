@@ -14,11 +14,22 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import {useNavigation} from '@react-navigation/native';
+import Svg, {G, Circle} from 'react-native-svg';
 
 const subjects = ['Tasks', 'Projects', 'Questions'];
 
 function PersonalD1() {
   const [selectedSubject, setSelectedSubject] = useState('Tasks');
+  const radius = 70;
+  const circleCircumference = 2 * Math.PI * radius;
+
+  const leftToSpendAmount = 600;
+  const targetAmount = 1000;
+
+  const spentAmount = targetAmount - leftToSpendAmount;
+  const percentage = (spentAmount / targetAmount) * 100;
+  const strokeDashoffset =
+    circleCircumference - (circleCircumference * percentage) / 100;
 
   const navigation = useNavigation();
   return (
@@ -68,22 +79,119 @@ function PersonalD1() {
               }}
             />
           </View>
-          <Text style={styles.subHeading}>Overall Progress</Text>
           <View
             style={{
               display: 'flex',
               flexDirection: 'row',
+              justifyContent: 'space-between',
             }}>
-            <Text style={styles.overallLabel}>Cohort :</Text>
-            <Text style={styles.overallValue}>January</Text>
-          </View>
-          <View
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-            }}>
-            <Text style={styles.overallLabel}>Course :</Text>
-            <Text style={styles.overallValue}>Mathematics</Text>
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+              }}>
+              <Text style={styles.subHeading}>Overall Progress</Text>
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                }}>
+                <Text style={styles.overallLabel}>Cohort :</Text>
+                <Text style={styles.overallValue}>January</Text>
+              </View>
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                }}>
+                <Text style={styles.overallLabel}>Course :</Text>
+                <Text style={styles.overallValue}>Mathematics</Text>
+              </View>
+            </View>
+            <View style={styles.graphWrapper}>
+              <Svg height="125" width="125" viewBox="0 0 180 180">
+                <G rotation={-90} originX="90" originY="90">
+                  <Circle
+                    cx="50%"
+                    cy="50%"
+                    r={radius}
+                    stroke="#fff"
+                    fill="transparent"
+                    strokeWidth="10"
+                  />
+                  <Circle
+                    cx="50%"
+                    cy="50%"
+                    r={radius}
+                    stroke="#6544F2"
+                    fill="transparent"
+                    strokeWidth="10"
+                    strokeDasharray={circleCircumference}
+                    strokeDashoffset={strokeDashoffset}
+                    strokeLinecap="round"
+                  />
+                </G>
+              </Svg>
+              <Svg
+                height="100"
+                width="100"
+                viewBox="0 0 180 180"
+                style={{
+                  position: 'absolute',
+                }}>
+                <G rotation={-90} originX="90" originY="90">
+                  <Circle
+                    cx="50%"
+                    cy="50%"
+                    r={radius}
+                    stroke="#fff"
+                    fill="transparent"
+                    strokeWidth="10"
+                  />
+                  <Circle
+                    cx="50%"
+                    cy="50%"
+                    r={radius}
+                    stroke="#F25735"
+                    fill="transparent"
+                    strokeWidth="10"
+                    strokeDasharray={circleCircumference}
+                    strokeDashoffset={strokeDashoffset}
+                    strokeLinecap="round"
+                  />
+                </G>
+              </Svg>
+              <Svg
+                height="70"
+                width="70"
+                viewBox="0 0 180 180"
+                style={{
+                  position: 'absolute',
+                }}>
+                <G rotation={-90} originX="90" originY="90">
+                  <Circle
+                    cx="50%"
+                    cy="50%"
+                    r={radius}
+                    stroke="#fff"
+                    fill="transparent"
+                    strokeWidth="10"
+                  />
+                  <Circle
+                    cx="50%"
+                    cy="50%"
+                    r={radius}
+                    stroke="#FFC226"
+                    fill="transparent"
+                    strokeWidth="10"
+                    strokeDasharray={circleCircumference}
+                    strokeDashoffset={strokeDashoffset}
+                    strokeLinecap="round"
+                  />
+                </G>
+              </Svg>
+              <Text style={styles.text}>Average</Text>
+            </View>
           </View>
           <View style={styles.filterContainer}>
             {subjects.map(subject =>
@@ -223,6 +331,19 @@ const styles = StyleSheet.create({
   },
   linearCard: {
     borderRadius: 8,
+  },
+  graphWrapper: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    position: 'absolute',
+    textAlign: 'center',
+    color: '#250075',
+    fontFamily: 'Gilroy-Medium',
+    fontSize: 10,
+    fontStyle: 'normal',
+    fontWeight: 400,
   },
 });
 
