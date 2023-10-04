@@ -38,7 +38,7 @@ export default function SettingS({navigation}) {
           <Text style={styles.HeadTxt}>Account</Text>
           <View style={{ marginTop: 20 }}>
 
-            <TouchableOpacity style={styles.navBtn}>
+            <TouchableOpacity onPress={()=>navigation.navigate('StudentP')} style={styles.navBtn}>
               <View style={{ width: '80%', flexDirection: 'row', gap: 10 }}>
                 <Icon name={'person-outline'} color={'black'} size={20} />
                 <Text style={styles.secondTxt}>Profile</Text>

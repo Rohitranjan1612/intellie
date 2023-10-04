@@ -11,6 +11,7 @@ import MainTabNavigator from './MainTabNavigator';
 import Login from '../Screens/StartScreens/Login/Login';
 import PersonalD1 from '../Screens/StartScreens/PersonalDetails/PersonalD1';
 import PersonalD2 from '../Screens/StartScreens/PersonalDetails/PersonalD2';
+import StudentP from '../Screens/StartScreens/StudentProfile/StudentP';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,7 @@ const StackScreens = () => {
         <Stack.Screen name="Otp" component={OTPScreen} />
         <Stack.Screen name="PersonalD1" component={PersonalD1} />
         <Stack.Screen name="PersonalD2" component={PersonalD2} />
+        <Stack.Screen name="StudentP" component={StudentP} />
         <Stack.Screen
           name="MainTabNavigator"
           component={MainTabNavigator}
